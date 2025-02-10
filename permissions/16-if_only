@@ -1,14 +1,2 @@
 #!/bin/bash
-if [ ! -e "hello" ]; then
-    echo "File 'hello' does not exist."
-    exit 1
-fi
-
-OWNER=$(stat -c "%U" hello)
-
-if [ "$OWNER" = "guillaume" ]; then
-    sudo chown vincent hello
-    echo "Owner changed to vincent."
-else
-    echo "File 'hello' is not owned by guillaume. No changes made."
-fi
+[ "$(stat -c %U hello 2>/dev/null)" = "guillaume" ] && sudo chown vincent hello
