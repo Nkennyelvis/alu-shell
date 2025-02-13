@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "drwxr-xr-x  5 user user 4096 Feb 13 10:00 ." > ls_cwd_content
+echo ".. file1 file2 file3 ls_cwd_content" > ls_cwd_content
